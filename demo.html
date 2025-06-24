@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #text {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* limit to one line */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+    </style>
+</head>
+<body>
+    <p id="myText">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+      </p>
+      
+      <script>
+        const p = document.getElementById('myText');
+        const words = p.innerText.split(' ');
+      
+        const firstLine = words.slice(0, 25).join(' ');
+        const secondLine = words.slice(25).join(' ');
+      
+        p.innerHTML = `<span>${firstLine}</span><br><span>${secondLine}</span>`;
+      </script>
+</body>
+</html>
