@@ -36,7 +36,6 @@
 
   body, html {
     height: 100%;
-    margin: 0;
     /* font-family: "Roboto", sans-serif !important; */
     font-family: "Montserrat", sans-serif;
     overflow: hidden;
@@ -797,9 +796,8 @@
   .layout {
     width: 100% !important;
     height: 100% !important;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+    margin: 0 !important;
+    max-width: 100%;
   }
   main .categories-section .categories-card .categories-icon {
     width: 60px;
