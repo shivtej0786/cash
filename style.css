@@ -457,22 +457,22 @@
 
   .custom-offer-card .filter-btn {
  
-    border: 1px solid #ddd !important;
-    background-color: #fff !important;
+    border: 1px solid var(--color-primary) !important;
+    background-color: var(--color-primary) !important;
     border-radius: 8px !important;
     padding: 6px 10px;
     box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.1);
 
-    color: #212529 !important;
+    color: white !important;
     display: inline-flex;
     align-items: center;
     gap: 6px;
     transition: background-color 0.2s;
   }
   
-  .custom-offer-card .filter-btn img{
+  /* .custom-offer-card .filter-btn img{
     filter: invert(1);
-  }
+  } */
   
 
   .custom-offer-card .discount-card {
@@ -516,8 +516,8 @@
   }
   
   .custom-offer-card .discount-card .label .badge {
-    width: 38px;
-    height: 31px;
+    width: 35px;
+    height: 35px;
     padding: 0;
   }
   .custom-offer-card .discount-card .label .badge  img{
@@ -525,21 +525,22 @@
     height: 100%;
   }
   .custom-offer-card .discount-card .discount-img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 10px;
   }
   
   .custom-offer-card .discount-card .title {
-    font-size: 16px;
-    font-family: 700;
+    font-size: 14px;
+    font-weight: 600;
+  
     color: black;
   }
   
   .custom-offer-card .discount-card .sub-title {
-    font-size: 12px;
-    font-family: 500;
-    color: black;
+    font-size: 10px;
+    /* font-weight: 500; */
+    color: var(--color-muted);
   }
   
   .custom-offer-card .discount-card .description {
@@ -547,10 +548,11 @@
     color: #7B7B7B;
     -webkit-box-orient: vertical;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    text-wrap: nowrap;
+    /* -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: normal;
+    white-space: normal; */
   }
   
   .custom-offer-card .discount-card .left-card-title {
@@ -617,7 +619,7 @@
     background: var(--color-primary);
     border: none;
     border-radius: 8px;
-    padding: 4px 40px;
+    padding: 6px 40px;
   }
 
   .icon-text {
