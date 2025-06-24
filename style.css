@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --color-primary: #5124A5;
+    --color-primary: #5430bb;
     --color-secondary: #009245;
     --color-accent: #1C1033;
     --color-success: #28a745;
@@ -50,31 +50,31 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    background-color: #fdf1fd !important;
+    background-color: #f7ecfc !important;
 
   }
   .main-inner {
     background-color: white;
-    border-top-left-radius: 26px ;
-    border-top-right-radius: 26px ;
+    border-top-left-radius: 20px ;
+    border-top-right-radius: 20px ;
 
   }
 
   header {
     flex-shrink: 0;
-    background-color: #fdf1fd;
+    background-color: #f7ecfc;
     flex-shrink: 0;
     padding: 5px 10px;
   }
 
   .top-header{
-    background-color: #fdf1fd;
+    background-color: #f7ecfc;
 
   }
 
   footer {
     flex-shrink: 0;
-    background-color: #fdf1fd;
+    background-color: #f7ecfc;
     border-bottom: 1px solid #D1C5EB;
     flex-shrink: 0;
     padding: 5px 10px;
@@ -169,16 +169,17 @@
     font-size: 12px;
     font-weight: 400;
     color: var(--color-primary);
-    border-radius: 8px;
+    border-radius: 100px;
     border: 1px solid #D1C5EB;
     box-shadow: 0 8px 24px rgba(0, 0, 0, .04);
     padding:7px 10px;
     width: auto;
-    /* height: 30px; */
+    height: 30px;
+    line-height: normal;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2px;
+    gap: 4px;
   }
   .wallet .blance {
     color: var(--color-primary);
@@ -213,7 +214,7 @@
   main  .search-bar {
     position: relative;
     width: 100%;  
-    padding: 0px 18px;
+    padding: 0px 13px;
     gap: 10px;
     display: flex;
     align-items: center;
