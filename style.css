@@ -538,8 +538,8 @@
   }
   
   .custom-offer-card .discount-card .sub-title {
-    font-size: 10px;
-    /* font-weight: 500; */
+    font-size: 8px;
+    font-weight: 400;
     color: var(--color-muted);
   }
   
