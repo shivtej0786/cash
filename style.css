@@ -41,7 +41,7 @@
     font-family: "Montserrat", sans-serif;
     overflow: hidden;
   }
-  .layout-container {
+  .layout {
     max-width: 400px;
     height: 100vh;
     margin: 0 auto;
@@ -186,7 +186,7 @@
     height: 70px; /* Adjust height as needed */
     margin-bottom: 20px;
     display: flex; /* Use flexbox to properly align segments */
-    /* Add a background to the .progress container to show the remaining empty space */
+    /* Add a background to the .progress to show the remaining empty space */
     background-color: var(--color-light);
   }
   /* Custom background color for the active progress bar segments */
@@ -791,8 +791,8 @@
 
 /* Desktop ke liye responsive width */
 @media (max-width: 568px) {
-  .layout-container {
-    width: 100%;
+  .layout {
+    width: 100% !important;
     height: 100% !important;
     margin: 0 auto;
     display: flex;
