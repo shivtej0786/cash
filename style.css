@@ -42,6 +42,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
   }
   .layout {
     max-width: 400px;
@@ -49,8 +50,15 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    background-color: #fdf1fd !important;
+
   }
-  
+  .main-inner {
+    background-color: white;
+    border-top-left-radius: 26px ;
+    border-top-right-radius: 26px ;
+
+  }
 
   header {
     flex-shrink: 0;
@@ -469,7 +477,7 @@
   .custom-offer-card .discount-card {
     background: #fff;
     border-radius: 16px;
-    box-shadow: 0 1px 1px 1px rgba(0,0,0,0.1);
+    /* box-shadow: 0 1px 1px 1px rgba(0,0,0,0.1); */
     overflow: hidden;
     display: flex;
     position: relative;
@@ -576,7 +584,9 @@
     display: flex;
   }
 
-  
+  .discount-progress {
+    border-radius: 0 !important;
+  }
 
   
  
