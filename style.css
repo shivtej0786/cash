@@ -40,6 +40,9 @@
     /* font-family: "Roboto", sans-serif !important; */
     font-family: "Montserrat", sans-serif;
     overflow: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
   .layout {
     max-width: 400px;
@@ -799,8 +802,8 @@
     flex-direction: column;
   }
   main .categories-section .categories-card .categories-icon {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
   main .categories-section .categories-card .categories-title {
     font-size: 12px;
