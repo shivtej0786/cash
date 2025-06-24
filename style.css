@@ -649,7 +649,8 @@
     box-shadow: -1px -1px 0px 0px #00000010;
     width: 100%;
     overflow-x: auto; 
-    
+    display: flex;
+    justify-content: space-around;
   }
   .mobile-bottom-header::-webkit-scrollbar {
     display: none;
