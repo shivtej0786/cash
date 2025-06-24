@@ -651,6 +651,10 @@
     overflow-x: auto; 
     
   }
+  .mobile-bottom-header::-webkit-scrollbar {
+    display: none;
+  }
+
   /* 
   .mobile-bottom-header .bottomBarBtn {
     align-items: center;
@@ -669,12 +673,11 @@
       justify-content: center;
       flex: 0 0 auto;   /* prevent shrinking, allow scrolling */
       width: auto;      /* width auto so content controls it */
-      margin: 0 25px;   /* optional: spacing between buttons */
+      margin: 0 10px;   /* optional: spacing between buttons */
     }
-    .mobile-bottom-header .bottomBarBtn:last-child{
-    padding-right: 20px;
-
-  }
+    /* .mobile-bottom-header .bottomBarBtn:last-child{
+    padding-right: 10px;
+    } */
   .mobile-bottom-header .bottomBarBtn .icon {
     display: flex;
     height: 30px;
@@ -683,7 +686,7 @@
 
   .mobile-bottom-header .bottomBarBtn .txt {
     color: var(--color-primary);
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 400;
     margin-top: 4px;
     text-align: center;
