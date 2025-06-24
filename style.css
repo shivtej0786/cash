@@ -318,7 +318,7 @@
       display: flex;
       align-items: end;
       justify-content: end;
-      background-color: #f8f6ff;
+      background-color: #f8f7ff;
       /* padding: 5px; */
       padding-bottom: 0;
       border-radius: 50%;
@@ -459,7 +459,7 @@
  
     border: 1px solid var(--color-primary) !important;
     background-color: var(--color-primary) !important;
-    border-radius: 8px !important;
+    border-radius: 100px !important;
     padding: 6px 10px;
     box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.1);
 
@@ -741,8 +741,14 @@
 
   .petrol-header {
       display: flex;
-      align-items: center;
+      /* align-items: center; */
       margin-bottom: 20px;
+    }
+    .petrol-header p {
+      margin: 0;
+      color: #888;
+      font-size: 10px;
+      margin-top: 2px;
     }
     .petrol-header img {
       width: 60px;
@@ -759,14 +765,14 @@
       font-weight: 500;
     }
     .petrol-card {
-      background: #f8f6ff;
+      background: #f8f7ff;
       border-radius: 10px;
       padding: 10px;
       position: relative;
       /* overflow: hidden; */
     }
     .petrol-card:nth-child(2) {
-      background: #f8f6ff;
+      background: #f8f7ff;
     }
     .petrol-card h6 {
       margin-bottom: 0px;
