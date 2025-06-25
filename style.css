@@ -926,9 +926,9 @@
   padding: 1rem;
   overflow-y: auto;
 }
-/* .filter-content:last-child {
+.filter-content:last-child {
  padding-bottom: 130px;
-} */
+}
 .offcanvas-footer {
   border-top: 1px solid #eee;
   padding: 0.75rem 1rem;
