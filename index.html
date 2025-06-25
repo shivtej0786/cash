@@ -620,11 +620,14 @@
     sectionMap[target] = tab;
   });
 
+  let hasUserScrolled = false;
+
   const observer = new IntersectionObserver(
     (entries) => {
+      if (!hasUserScrolled) return;
+
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Remove all active
           tabs.forEach((t) => t.classList.remove("active"));
           const tab = sectionMap[entry.target.id];
           if (tab) tab.classList.add("active");
@@ -633,15 +636,24 @@
     },
     {
       root: scrollContainer,
-      threshold: 0.5, // Section is 50% visible
+      threshold: 0.5,
     }
   );
 
-  // Observe each section
+  // Observe all sections
   Object.keys(sectionMap).forEach((id) => {
     const section = document.getElementById(id);
     if (section) observer.observe(section);
   });
+
+  // Detect first scroll
+  scrollContainer.addEventListener("scroll", () => {
+    hasUserScrolled = true;
+  });
+
+  // Set initial active manually
+  tabs.forEach(t => t.classList.remove("active"));
+  sectionMap['sort-section'].classList.add("active");
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
