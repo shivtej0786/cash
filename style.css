@@ -701,7 +701,7 @@
     justify-content: center;
     flex: 0 0 auto;
     width: auto;
-    margin: 0 12px;
+    /* margin: 0 12px; */
     color: #999; /* Default icon and text color */
     text-align: center;
   }
