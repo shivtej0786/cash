@@ -691,7 +691,7 @@
     width: 100%;
     overflow-x: auto;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
   }
   
   .mobile-bottom-header::-webkit-scrollbar {
