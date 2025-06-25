@@ -280,7 +280,7 @@
    
            <!-- one in section fillter  -->
    
-           <section class="custom-offer-card overflow-hidden">
+           <section class="custom-offer-card overflow-hidden position-relative">
              <div class="row gap-2">
               
                <div class="col-12 ">
@@ -311,7 +311,7 @@
                 </div>
                 <div class="col-12">
 
-                  <button class="filter-btn d-flex justify-content-end ms-auto">
+                  <button class="filter-btn d-flex justify-content-end ms-auto" data-bs-toggle="offcanvas" data-bs-target="#filtersOffcanvas">
                     <span><img src="/assets/img/page_info.svg" alt="page_info"></span> Filter
                   </button>
                 </div>
@@ -438,7 +438,97 @@
                  </div>
                </div>
              </div>
-   
+             <!-- Offcanvas -->
+            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="filtersOffcanvas">
+              <div class="offcanvas-header offcanvas-fillter-header py-2.5 d-flex align-items-center justify-content-between">
+                <h5 class="offcanvas-title fillter-title">Filters and sorting</h5>
+                <div class="fillter-clear">Clear all</div>
+              </div>
+              <div class="offcanvas-body d-flex p-0">
+                <!-- Sidebar Tabs -->
+                <div class="filter-sidebar d-flex flex-column">
+                  <div class="filter-tab d-flex align-items-center justify-content-center flex-column active" data-target="sort-section">
+                    <div class="icon">
+                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M151.6 469.6C145.5 476.2 137 480 128 480s-17.5-3.8-23.6-10.4l-88-96c-11.9-13-11.1-33.3 2-45.2s33.3-11.1 45.2 2L96 365.7 96 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 301.7 32.4-35.4c11.9-13 32.2-13.9 45.2-2s13.9 32.2 2 45.2l-88 96zM320 32l32 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32s14.3-32 32-32zm0 128l96 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-96 0c-17.7 0-32-14.3-32-32s14.3-32 32-32zm0 128l160 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-160 0c-17.7 0-32-14.3-32-32s14.3-32 32-32zm0 128l224 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-224 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg>
+                    </div>
+                    <div class="title">Short By</div>
+                  </div>
+                  <div class="filter-tab d-flex align-items-center justify-content-center flex-column "  data-target="time-section">
+                  <div class="icon">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g id="Stopwatch"><path d="M17.925,7.828c1.226,1.391 1.97,3.217 1.97,5.215c0,4.358 -3.537,7.895 -7.895,7.895c-4.358,0 -7.896,-3.537 -7.896,-7.895c0,-4.189 3.271,-7.621 7.396,-7.879l0,-1.103l-1.587,0c-0.645,0 -0.643,-1 -0,-1l4.174,0c0.645,0 0.644,1 -0,1l-1.587,0l0,1.103c1.803,0.113 3.443,0.832 4.718,1.956c0.378,-0.378 0.756,-0.756 1.135,-1.134c0.197,-0.198 0.507,-0.183 0.707,-0c0.199,0.183 0.185,0.522 -0,0.707l-1.135,1.135Zm0.97,5.215c0,-3.805 -3.089,-6.895 -6.895,-6.895c-3.806,0.001 -6.896,3.09 -6.896,6.895c0,3.806 3.09,6.895 6.896,6.895c3.806,0 6.895,-3.089 6.895,-6.895Zm-6.395,0.001c0,0.645 -1,0.643 -1,-0l0,-4.704c0,-0.644 1,-0.643 1,-0l0,4.704Z"></path></g></svg>
+                  </div>
+                  <div class="title">Time</div>
+                  </div>
+                  <div class="filter-tab d-flex align-items-center justify-content-center flex-column " data-target="rating-section">
+                    <div class="icon">
+                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g id="Stopwatch"><path d="M17.925,7.828c1.226,1.391 1.97,3.217 1.97,5.215c0,4.358 -3.537,7.895 -7.895,7.895c-4.358,0 -7.896,-3.537 -7.896,-7.895c0,-4.189 3.271,-7.621 7.396,-7.879l0,-1.103l-1.587,0c-0.645,0 -0.643,-1 -0,-1l4.174,0c0.645,0 0.644,1 -0,1l-1.587,0l0,1.103c1.803,0.113 3.443,0.832 4.718,1.956c0.378,-0.378 0.756,-0.756 1.135,-1.134c0.197,-0.198 0.507,-0.183 0.707,-0c0.199,0.183 0.185,0.522 -0,0.707l-1.135,1.135Zm0.97,5.215c0,-3.805 -3.089,-6.895 -6.895,-6.895c-3.806,0.001 -6.896,3.09 -6.896,6.895c0,3.806 3.09,6.895 6.896,6.895c3.806,0 6.895,-3.089 6.895,-6.895Zm-6.395,0.001c0,0.645 -1,0.643 -1,-0l0,-4.704c0,-0.644 1,-0.643 1,-0l0,4.704Z"></path></g></svg>
+                    </div>
+                    <div class="title">Rating</div>
+                    </div>
+                </div>
+
+                <!-- Content Area -->
+                <div class="filter-content d-flex flex-column gap-2" id="filterScrollContainer">
+                  <div class="time-filter-box"  id="sort-section">
+                    <h6 class="title-box">Time</h6>
+                    <div class="d-flex justify-content-between">
+                      <!-- Schedule Button -->
+                      <button class="time-btn">
+                        <img src="https://img.icons8.com/ios/50/000000/calendar--v1.png" alt="Schedule" />
+                        <span>Schedule</span>
+                      </button>
+                  
+                      <!-- Under 30 mins (active) -->
+                      <button class="time-btn active">
+                        <img src="https://img.icons8.com/fluency-systems-regular/48/009245/stopwatch.png" alt="Under 30 mins" />
+                        <span>Under 30 mins</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="time-filter-box" id="time-section">
+                    <h6 class="title-box">short</h6>
+                    <div class="d-flex justify-content-between">
+                      <!-- Schedule Button -->
+                      <button class="time-btn">
+                        <img src="https://img.icons8.com/ios/50/000000/calendar--v1.png" alt="Schedule" />
+                        <span>Schedule</span>
+                      </button>
+                  
+                      <!-- Under 30 mins (active) -->
+                      <button class="time-btn active">
+                        <img src="https://img.icons8.com/fluency-systems-regular/48/009245/stopwatch.png" alt="Under 30 mins" />
+                        <span>Under 30 mins</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="time-filter-box" id="rating-section"> 
+                    <h6 class="title-box">Rating</h6>
+                    <div class="d-flex justify-content-between">
+                      <!-- Schedule Button -->
+                      <button class="time-btn">
+                        <img src="https://img.icons8.com/ios/50/000000/calendar--v1.png" alt="Schedule" />
+                        <span>Schedule</span>
+                      </button>
+                  
+                      <!-- Under 30 mins (active) -->
+                      <button class="time-btn active">
+                        <img src="https://img.icons8.com/fluency-systems-regular/48/009245/stopwatch.png" alt="Under 30 mins" />
+                        <span>Under 30 mins</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Footer -->
+              <div class="offcanvas-footer py-2.5">
+                <button class="btn btnclose" data-bs-dismiss="offcanvas">Close</button>
+                <button class="btn showbtn">Show results</button>
+              </div>
+            </div>
+
            </section>
          </div>
 
@@ -496,6 +586,13 @@
       </footer>
     </div>
 
+
+
+   
+</div>
+
+
+
 <!-- Bootstrap JS (required for dropdowns) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -506,6 +603,44 @@
   const secondLine = words.slice(25).join(' ');
 
   p.innerHTML = `<span>${firstLine}</span><br><span>${secondLine}</span>`;
+</script>
+
+<!-- fillter tab active  -->
+
+<script>
+  const scrollContainer = document.getElementById('filterScrollContainer');
+  const sections = [
+    { id: 'sort-section', tab: null },
+    { id: 'time-section', tab: null },
+    { id: 'rating-section', tab: null },
+  ];
+
+  // Link tabs with their targets
+  const allTabs = document.querySelectorAll('.filter-tab');
+  allTabs.forEach(tab => {
+    const targetId = tab.getAttribute('data-target');
+    const match = sections.find(s => s.id === targetId);
+    if (match) match.tab = tab;
+  });
+
+  scrollContainer.addEventListener('scroll', () => {
+    let closest = null;
+    let closestOffset = Infinity;
+
+    sections.forEach(section => {
+      const el = document.getElementById(section.id);
+      const offset = Math.abs(el.getBoundingClientRect().top - scrollContainer.getBoundingClientRect().top);
+      if (offset < closestOffset) {
+        closest = section;
+        closestOffset = offset;
+      }
+    });
+
+    if (closest) {
+      allTabs.forEach(tab => tab.classList.remove('active'));
+      if (closest.tab) closest.tab.classList.add('active');
+    }
+  });
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
