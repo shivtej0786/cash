@@ -941,7 +941,7 @@
   overflow-y: auto;
 }
 .filter-content:last-child {
- padding-bottom: 160px;
+ padding-bottom: 180px;
 }
 .offcanvas-footer {
   border-top: 1px solid #eee;
