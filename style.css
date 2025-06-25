@@ -853,8 +853,22 @@
   border-top-right-radius: 20px;
 }
 
+
 .offcanvas-fillter-header {
   border-bottom: 1px solid #eee;
+}
+
+
+.offcanvas-fillter-header .closeicon {
+  position: absolute;
+  top: -37px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #141414ad;
+  color: white !important;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
 }
 .fillter-title {
   font-size: 14px;
@@ -912,9 +926,9 @@
   padding: 1rem;
   overflow-y: auto;
 }
-.filter-content:last-child {
+/* .filter-content:last-child {
  padding-bottom: 130px;
-}
+} */
 .offcanvas-footer {
   border-top: 1px solid #eee;
   padding: 0.75rem 1rem;

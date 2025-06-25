@@ -443,6 +443,9 @@
               <div class="offcanvas-header offcanvas-fillter-header py-2.5 d-flex align-items-center justify-content-between">
                 <h5 class="offcanvas-title fillter-title">Filters and sorting</h5>
                 <div class="fillter-clear">Clear all</div>
+                <button type="button" class="border-0 closeicon" data-bs-dismiss="offcanvas" aria-label="Close">
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M405 136.798L375.202 107 256 226.202 136.798 107 107 136.798 226.202 256 107 375.202 136.798 405 256 285.798 375.202 405 405 375.202 285.798 256z"></path></svg>
+                </button>
               </div>
               <div class="offcanvas-body d-flex p-0">
                 <!-- Sidebar Tabs -->
@@ -608,38 +611,36 @@
 <!-- fillter tab active  -->
 
 <script>
-  const scrollContainer = document.getElementById('filterScrollContainer');
-  const sections = [
-    { id: 'sort-section', tab: null },
-    { id: 'time-section', tab: null },
-    { id: 'rating-section', tab: null },
-  ];
+  const scrollContainer = document.getElementById("filterScrollContainer");
+  const tabs = document.querySelectorAll(".filter-tab");
 
-  // Link tabs with their targets
-  const allTabs = document.querySelectorAll('.filter-tab');
-  allTabs.forEach(tab => {
-    const targetId = tab.getAttribute('data-target');
-    const match = sections.find(s => s.id === targetId);
-    if (match) match.tab = tab;
+  const sectionMap = {};
+  tabs.forEach((tab) => {
+    const target = tab.getAttribute("data-target");
+    sectionMap[target] = tab;
   });
 
-  scrollContainer.addEventListener('scroll', () => {
-    let closest = null;
-    let closestOffset = Infinity;
-
-    sections.forEach(section => {
-      const el = document.getElementById(section.id);
-      const offset = Math.abs(el.getBoundingClientRect().top - scrollContainer.getBoundingClientRect().top);
-      if (offset < closestOffset) {
-        closest = section;
-        closestOffset = offset;
-      }
-    });
-
-    if (closest) {
-      allTabs.forEach(tab => tab.classList.remove('active'));
-      if (closest.tab) closest.tab.classList.add('active');
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Remove all active
+          tabs.forEach((t) => t.classList.remove("active"));
+          const tab = sectionMap[entry.target.id];
+          if (tab) tab.classList.add("active");
+        }
+      });
+    },
+    {
+      root: scrollContainer,
+      threshold: 0.5, // Section is 50% visible
     }
+  );
+
+  // Observe each section
+  Object.keys(sectionMap).forEach((id) => {
+    const section = document.getElementById(id);
+    if (section) observer.observe(section);
   });
 </script>
 
