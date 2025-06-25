@@ -644,6 +644,35 @@
     align-items: center;
     gap: 5px;
   }
+  .custom-offer-card .discount-card .curve-side {
+    position: absolute;
+    left: -9px;
+    top: 0;
+    bottom: 0;
+    width: 16px;
+    /* background-color: #f4f4f4; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0;
+    z-index: 1;
+  }
+
+  .custom-offer-card .discount-card .curve-side::before,
+  .custom-offer-card .discount-card .curve-side::after,
+  .custom-offer-card .discount-card .curve-side span {
+    content: "";
+    display: block;
+    width: 13px;
+    height: 13px;
+    background-color: white;
+    border-radius: 50%;
+  }
+
+  .custom-offer-card .discount-card .curve-side span {
+    margin: 2px 0;
+  }
 
 
 
@@ -657,55 +686,44 @@
 
    .mobile-bottom-header {
     background-color: white;
-    padding: 5px 0px;
+    padding: 5px 0;
     box-shadow: -1px -1px 0px 0px #00000010;
     width: 100%;
-    overflow-x: auto; 
+    overflow-x: auto;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: start;
   }
+  
   .mobile-bottom-header::-webkit-scrollbar {
     display: none;
   }
-
-  /* 
-  .mobile-bottom-header .bottomBarBtn {
-    align-items: center;
-    cursor: pointer;
+  
+  .bottomBarBtn {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    width: 16.66%;
-    
-    } */
-    .mobile-bottom-header .bottomBarBtn {
-      align-items: center;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex: 0 0 auto;   /* prevent shrinking, allow scrolling */
-      width: auto;      /* width auto so content controls it */
-      margin: 0 10px;   /* optional: spacing between buttons */
-    }
-    /* .mobile-bottom-header .bottomBarBtn:last-child{
-    padding-right: 10px;
-    } */
-  .mobile-bottom-header .bottomBarBtn .icon {
-    display: flex;
-    height: 30px;
-    width: 30px;
-  }
-
-  .mobile-bottom-header .bottomBarBtn .txt {
-    color: var(--color-primary);
-    font-size: 10px;
-    font-weight: 400;
-    margin-top: 4px;
+    flex: 0 0 auto;
+    width: auto;
+    margin: 0 12px;
+    color: #999; /* Default icon and text color */
     text-align: center;
   }
-
-
+  
+  .bottomBarBtn .txt {
+    font-size: 10px;
+    margin-top: 4px;
+    font-weight: 400;
+  }
+  
+  .bottomBarBtn .icon svg {
+    stroke: currentColor;
+  }
+  
+  /* Active state */
+  .bottomBarBtn.active {
+    color: #5430bb;
+  }
 
 /* banner  */
 
