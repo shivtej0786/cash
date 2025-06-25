@@ -614,46 +614,50 @@
   const scrollContainer = document.getElementById("filterScrollContainer");
   const tabs = document.querySelectorAll(".filter-tab");
 
+  const sections = Array.from(document.querySelectorAll(".time-filter-box"));
   const sectionMap = {};
+
   tabs.forEach((tab) => {
-    const target = tab.getAttribute("data-target");
-    sectionMap[target] = tab;
+    const id = tab.getAttribute("data-target");
+    sectionMap[id] = tab;
   });
 
-  let hasUserScrolled = false;
+  let ticking = false;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      if (!hasUserScrolled) return;
-
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          tabs.forEach((t) => t.classList.remove("active"));
-          const tab = sectionMap[entry.target.id];
-          if (tab) tab.classList.add("active");
-        }
-      });
-    },
-    {
-      root: scrollContainer,
-      threshold: 0.5,
-    }
-  );
-
-  // Observe all sections
-  Object.keys(sectionMap).forEach((id) => {
-    const section = document.getElementById(id);
-    if (section) observer.observe(section);
-  });
-
-  // Detect first scroll
   scrollContainer.addEventListener("scroll", () => {
-    hasUserScrolled = true;
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateActiveTab();
+        ticking = false;
+      });
+      ticking = true;
+    }
   });
 
-  // Set initial active manually
-  tabs.forEach(t => t.classList.remove("active"));
-  sectionMap['sort-section'].classList.add("active");
+  function updateActiveTab() {
+    const containerTop = scrollContainer.getBoundingClientRect().top;
+
+    let closestSection = null;
+    let closestDistance = Infinity;
+
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      const distance = Math.abs(rect.top - containerTop);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestSection = section;
+      }
+    });
+
+    if (closestSection) {
+      const id = closestSection.id;
+      tabs.forEach((t) => t.classList.remove("active"));
+      if (sectionMap[id]) sectionMap[id].classList.add("active");
+    }
+  }
+
+  // Manually set initial tab (optional)
+  updateActiveTab();
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
